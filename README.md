@@ -2,6 +2,8 @@
 
 Token Window is an open-source Windows desktop widget that helps you see how much of your weekly Codex allowance remains and whether your current pace will exhaust it before renewal. It shows recorded usage across the seven-day window and a dashed burn forecast that adapts to recent activity. Auto mode uses recent six-hour usage with a week-history fallback; manual 6-hour, 24-hour, and whole-week modes are also available. Resize it or enable Always on top.
 
+Codex is currently the supported provider. Support for other providers could be added if people want it—open an issue to request a provider, or contribute an integration.
+
 Contributions are welcome: help improve the forecasting, polish the interface, test different Codex setups, or suggest a feature. Open an issue to share an idea or a bug, or send a pull request with a focused improvement. Let's make this a useful little tool together.
 
 ![Token Window showing 26% remaining allowance, a seven-day usage graph, and an adaptive burn forecast](docs/images/token-window.png)
