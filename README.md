@@ -1,6 +1,20 @@
 # Token Window
 
-A small Windows desktop widget showing the Codex seven-day allowance window ending at its recorded renewal timestamp. Displays actual used/remaining percentages and a dashed remaining-allowance forecast. Auto mode defaults to recent six-hour usage with a week-history fallback; manual 6-hour, 24-hour, and whole-week modes are also available. Resize it or enable Always on top.
+Token Window is an open-source Windows desktop widget that helps you see how much of your weekly Codex allowance remains and whether your current pace will exhaust it before renewal. It shows recorded usage across the seven-day window and a dashed burn forecast that adapts to recent activity. Auto mode uses recent six-hour usage with a week-history fallback; manual 6-hour, 24-hour, and whole-week modes are also available. Resize it or enable Always on top.
+
+Contributions are welcome: help improve the forecasting, polish the interface, test different Codex setups, or suggest a feature. Open an issue to share an idea or a bug, or send a pull request with a focused improvement. Let's make this a useful little tool together.
+
+![Token Window showing 26% remaining allowance, a seven-day usage graph, and an adaptive burn forecast](docs/images/token-window.png)
+
+## Contributing
+
+Fork the repository, build the widget using the instructions below, and submit a pull request describing what changed and why. For forecast or log-reader changes, add relevant regression checks and run:
+
+```powershell
+dotnet run --project TokenWidget.Tests -c Release
+```
+
+Bug reports are especially helpful when they include the widget version or executable path, what you expected, and what happened. Please remove personal conversation content and credentials before sharing logs.
 
 ## Run
 
@@ -25,3 +39,7 @@ The graph covers exactly renewal minus seven days through renewal, displayed in 
 For forecasting only, a downward meter excursion that recovers to its prior value within 30 minutes is excluded as a temporary inconsistent snapshot. Unrecovered or sustained downward adjustments start a new forecast segment. Recorded actual graph points remain unchanged. Manual modes use their selected interval ending at the latest reading. The forecast begins at the latest reading and is capped at zero or renewal. “Runs out” means estimated allowance exhaustion; renewal is a separate event. Old readings are labelled stale, and expired windows await new readings rather than silently manufacturing a fresh allowance. Forecasts assume the estimated pace continues; future model changes, idle time, and sparse/rounded observations can change them.
 
 This is a standalone desktop window, not an extension of the Windows Widgets board. No launch-at-login or account switching is configured. Local session logs may contain readings from different accounts if the same Codex home is shared.
+
+## License
+
+Licensed under the [MIT License](LICENSE). You're welcome to use, modify, and contribute to the project. Codex and OpenAI names and logos belong to their respective owners; this is an independent community project.
